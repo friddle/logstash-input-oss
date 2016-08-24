@@ -18,7 +18,7 @@ This Logstash input plugin collects access logs from OSS. That's it.
 ```
 input {
   oss {
-    type => "application/octet-stream"
+    type => "nginx"
     endpoint => "<endpoint>"
     access_key_id => "<your-access-key-id>"
     access_key_secret => "<your-access-key-secret>"
