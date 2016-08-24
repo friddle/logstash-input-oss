@@ -84,7 +84,9 @@ class LogStash::Inputs::Oss < LogStash::Inputs::Base
 
   def unzip_snappy_file(temp_dir,filename)
     documents=File.read(File.join(filename))
-    documents=Snappy.inflate(documents)
+    if documents != ""
+      documents=Snappy.inflate(documents)
+    end
     File.write(File.join(filename),documents)
   end
 
